@@ -1,3 +1,42 @@
 @mixin range-thumb() {
  
 }
+@mixin range-track($color: #3071a9) {
+    &::-webkit-slider-runnable-track {
+        background-color: $color;
+        @content;
+    }
+    &::-moz-range-track {
+        @content;
+    }
+    
+}
+
+@mixin thumb() {
+    &::-moz-range-thumb {
+        @content;
+    }
+    &::-webkit-slider-thumb {
+        @content;
+    }
+    &::-ms-thumb {
+        @content;
+    }
+}
+
+@mixin fill($color: #367ebd) {
+    &::-ms-fill-lower {
+        background-color: $color;
+        @content;
+    }
+    &::-ms-fill-upper {
+        @content;
+    }
+    &:focus::-ms-fill-lower{background: $color;}
+    &:focus::-ms-fill-upper{background: $color;} 
+    &:focus::-webkit-slider-runnable-track{background: $color;}
+}
+
+@mixin shadow() {
+
+}

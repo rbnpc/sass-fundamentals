@@ -1,6 +1,47 @@
 @import '_variables';
 @import '_mixins';
 
-input[type="range"] {
-  // Add your styles here
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  @include range-track ($darkblue) {
+    width: 100%;
+    height: 8.4px;
+    box-shadow: $shadow;
+    cursor: pointer;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  @include thumb (){
+    box-shadow: $shadow;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  @include fill ($darkblue){
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: $shadow;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -14px;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
 }
